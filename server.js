@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var PORT = 3100;
 
 app.get('/', function(req, res) {
     res.send('Hello Express !');
@@ -11,4 +12,6 @@ app.get('/about', function(req, res) {
 
 app.use(express.static(__dirname+"/public"));
 
-app.listen(3100);
+app.listen(PORT, function() {
+    console.log("Express server is listening on port " + PORT);
+});
